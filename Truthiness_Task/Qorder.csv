@@ -1,0 +1,9 @@
+Order,True Pic Question 1,True Pic Question 2,False Pic Question 1,False Pic Question 2,True No-Pic Question 1,True No-Pic Question 2,False No-Pic Question 1,False No-Pic Question 2
+1,1A,2A,3AF,4AF,5B,6B,7BF,8BF
+2,8A,1A,2AF,3AF,4B,5B,6BF,7BF
+3,7A,8A,1AF,2AF,3B,4B,5BF,6BF
+4,6A,7A,8AF,1AF,2B,3B,4BF,5BF
+5,5A,6A,7AF,8AF,1B,2B,3BF,4BF
+6,4A,5A,6AF,7AF,8B,1B,2BF,3BF
+7,3A,4A,5AF,6AF,7B,8B,1BF,2BF
+8,2A,3A,4AF,5AF,6B,7B,8BF,1BF

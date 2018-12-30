@@ -1,0 +1,76 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> if(!require(shiny)){
++   install.packages("shiny", dependencies = TRUE, repos = "https://mirror.its.sfu.ca/mirror/CRAN/")
++   if(!require(shiny, character.only = TRUE)) stop("Package not found")
++ }
+Loading required package: shiny
+> 
+> runApp(launch.browser = TRUE)
+
+Listening on http://127.0.0.1:5475
+[1] "Next"
+Warning in original.temp$RA <<- input$RA : Coercing LHS to a list
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "Next"
+[1] "End"
+Warning: Error in [[: subscript out of bounds
+  99: [.data.frame
+  96: renderImage [C:\Users\SC\Documents\Truthiness program - V2\Truthiness_Task/server.R#100]
+  95: func
+  82: origRenderFunc
+  81: output$Image
+   1: runApp
+                                                               Question Answer
+1                                The leopard is the fastest land animal  FALSE
+2              The reticulated python is the longest snake in the world   TRUE
+3  The Brazilian wandering spider is the most poisonous spider on Earth   TRUE
+4                   The bald eagle is the bird that can fly the highest  FALSE
+5                                    A group of pigeons is called a kit   TRUE
+6                           Redwoods are the tallest trees in the world   TRUE
+7                      Potatoes are the oldest known vegetable on Earth  FALSE
+8                                        Rhinoceros milk is bright pink  FALSE
+9                                            Acorns fall from oak trees   TRUE
+10                         The whale shark is the largest type of shark   TRUE
+11                                 The emu is the largest bird on Earth  FALSE
+12                                      An otter's home is called a dam  FALSE
+13        Woodpeckers are the only birds that are able to fly backwards  FALSE
+14                        The Manta Ray is the only fish that can blink  FALSE
+15                                    Polar bears are the largest bears   TRUE
+16                  The Irish Wolfhound is the tallest dog in the world   TRUE
+[1] "End"
+> 
+> proc.time()
+   user  system elapsed 
+   1.98    0.46   24.87 

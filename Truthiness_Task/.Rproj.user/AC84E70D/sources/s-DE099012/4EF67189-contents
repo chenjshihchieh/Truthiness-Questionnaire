@@ -1,0 +1,84 @@
+Qlist <- read.csv("Qlist.csv", header = TRUE, stringsAsFactors = FALSE)
+original <- read.csv(file.path("..", "truthScores.csv"), header = TRUE, stringsAsFactors = FALSE)
+original.temp <- rep("", length(original))
+names(original.temp) <- names(original)
+number.of.questions <- 16
+
+group <- c(rep("A", 4), rep("B", 4), rep("AF", 4), rep("BF", 4))
+Order.list <- paste0(sample(1:16, 16), sample(group, 16))
+
+function(output, input, session){
+  output$main.display <- renderUI({
+    if(input$click == 0) {
+      list(textInput("RA", "RA"),
+           textInput('PID', 'Participant ID'),
+           textInput('Gender', 'Gender'),
+           dateInput("DOB", "Date of Birth", value = "1990-01-01", max = Sys.Date(), startview = "decade"),
+           h2("Introduction Text")
+      )
+    }else if(input$click > 0 & input$click <= number.of.questions){
+      list(
+        imageOutput("Image", width = "400px", height = "300px"),
+        h3(Qlist[Qlist$QNum == Order.list[[input$click]], 3]),
+        radioButtons(inputId = 'response', NULL, choiceNames = c('True', 'False'), choiceValues = c('TRUE', 'FALSE'), selected = character(0), inline = TRUE)
+      )
+    }else{
+      list(h3("Your responses have been saved. If you are curious about the answers to the questions you were asked, they are available in a table below."),
+           tableOutput({"answers"}) )
+    }
+     
+  })
+
+  temp <- eventReactive(input$click,{
+    if(input$click == 1){
+      original.temp[input$click] <<- input$PID
+      original.temp$RA <<- input$RA
+      original.temp$Gender <<- input$Gender
+      original.temp$Birthdate <<- as.character(input$DOB)
+      original.temp$Order.of.Questions <<- paste(Order.list, collapse = ", ")
+      original.temp$Time.of.Testing <<- as.character(Sys.time())
+    }else if(input$click > 1 & input$click <= number.of.questions + 1){
+      original.temp[input$click] <<- input$response
+      combined.result <- rbind(original, original.temp)
+      write.csv(combined.result, file = file.path("..", "truthScores.csv"), row.names = FALSE)
+    }
+    
+    ""
+  })
+  
+  output$b <- renderText({
+    temp()
+  })
+  
+  output$Image <- renderImage({
+    
+    image.path <- file.path("pictures", Qlist[Qlist$QNum == Order.list[[input$click]], 4])
+    list(src = image.path, width = "400px", height = "300px", border = "0")
+    
+  }, deleteFile = FALSE)
+  
+  output$answers <- renderTable({
+    key <- data.frame(Code = c("A", "B", "AF", "BF"), Value = c("TRUE", "TRUE", "FALSE", "FALSE"), stringsAsFactors = FALSE)
+    no.number.order.list <- gsub("[^a-zA-Z]", "", Order.list)
+    
+    for(i in 1:number.of.questions){
+      if(!exists("Question")){Question <- Qlist[Qlist$QNum == Order.list[[i]], 3]
+      }else{Question <- c(Question, Qlist[Qlist$QNum == Order.list[[i]], 3])}
+    }
+    
+    for(i in 1:number.of.questions){
+      if(!exists("Answer")){Answer <- key[key[1] == no.number.order.list[i], 2]
+      }else{Answer <- c(Answer, key[key[1] == no.number.order.list[i], 2])}
+    }
+    Response <- as.character(original.temp[1:number.of.questions + 1])
+    
+    
+    print(data.frame(Question, Answer, Response))
+    
+  })
+  
+  session$onSessionEnded(function() {
+    q()
+  })
+  
+}

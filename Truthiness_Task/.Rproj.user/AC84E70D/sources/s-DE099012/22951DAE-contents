@@ -1,0 +1,5 @@
+fluidPage(
+  uiOutput('main.display'),
+  actionButton(inputId = 'click', label = "Next"),
+  textOutput("b")
+  )

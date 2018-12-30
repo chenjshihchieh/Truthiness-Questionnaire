@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541274226867.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "22951DAE",
+    "lastKnownWriteTime" : 1541490185,
+    "last_content_update" : 1541490185,
+    "path" : "~/Truthiness program - Mac/Truthiness_Task/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "cursorPosition" : "1,27",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

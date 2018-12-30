@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1544213655735.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8591F4CB",
+    "lastKnownWriteTime" : 1544227605,
+    "last_content_update" : 1544227605393,
+    "path" : "~/Downloads/Truthiness program - V3 2018Nov17-20181207T200900Z-001/Truthiness program - V3 2018Nov17/Truthiness_Task/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "cursorPosition" : "101,28",
+        "scrollLine" : "79"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

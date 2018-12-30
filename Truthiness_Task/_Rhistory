@@ -1,0 +1,27 @@
+file.path("..", "truthscores.csv")
+file.path("..", sample(1:10, 1))
+length(c(NA, NA, NA))
+length(NULL)
+system.path()
+?system.file
+Sys.time()
+file.path("..", original.temp$PID)
+file.path("..", 123)
+patste0("../", "123", "_", as.character(Sys.time()), ".csv")
+paste0("../", "123", "_", as.character(Sys.time()), ".csv")
+?Sys.time
+Sys.Date()
+paste0("../", "123", "_", as.character(Sys.time()), ".csv")
+file.path("..", "truthScores.csv")
+?write.csv
+Qlist <- read.csv("Qlist.csv", header = TRUE, stringsAsFactors = FALSE)
+original <- read.csv(file.path("..", "truthScores.csv"), header = TRUE, stringsAsFactors = FALSE)
+original.temp <- rep("", length(original))
+write.csv(original.temp, file = file.path("..", paste0("PID:", "input$PID", " Date:", as.character(Sys.time()), ".csv")), row.names = FALSE)
+write.csv(original.temp, file = file.path("..", paste0("PID:", "input$PID", " Date:", ".csv")), row.names = FALSE)
+write.csv(original.temp, file = file.path("..", paste0("PID", "input$PID", " Date", ".csv")), row.names = FALSE)
+Sys.Date()
+?gsub
+paste0("PID:", "input$PID", " Date:", as.character(Sys.time()), ".csv")
+sub(":", "", paste0("PID:", "input$PID", " Date:", as.character(Sys.time()), ".csv"))
+gsub(":", "", paste0("PID:", "input$PID", " Date:", as.character(Sys.time()), ".csv"))

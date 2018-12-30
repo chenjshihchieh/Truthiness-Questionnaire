@@ -1,0 +1,6 @@
+if(!require(shiny)){
+  install.packages("shiny", dependencies = TRUE, repos = "https://mirror.its.sfu.ca/mirror/CRAN/")
+  if(!require(x,character.only = TRUE)) stop("Package not found")
+}
+
+runApp(launch.browser = TRUE)
